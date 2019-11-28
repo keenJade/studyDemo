@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/post/post"
+    "pages/post/post",
+    "pages/goodsList/goodsList",
+    "pages/login/login"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",
@@ -22,7 +24,7 @@
           "selectedIconPath": "static/images/bottom_icon01_lh.png"
         },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/goodsList/goodsList",
         "text": "分类",
           "iconPath": "static/images/bottom_icon02.png",
           "selectedIconPath": "static/images/bottom_icon02_lh.png"
