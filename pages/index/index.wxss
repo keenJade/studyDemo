@@ -1,21 +1,107 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
+/* 引入模板样式 */
+@import "../post/template/template.wxss";
+
+.topBox{
+   background: #fff;
+   padding:1% 3%;
+}
+.search_btn{
+	height: 60rpx;
+	background-color: #f7f7f7;
+	border-radius: 30rpx;
+	border: solid 1rpx #ffffff;
+}
+.search_btn image{
+  width: 34rpx;
+	height: 34rpx;
+  margin-right: 1%;
+}
+/* 轮播图 */
+.swiper {
+ margin:2% 3%;
+}
+.swiper swiper{
+	height: 280rpx;
+	background-color: #f7c7d3;
+	border-radius: 20rpx;
+}
+.swiper .swiper-item view{
+  width:100%;
+  height:100%;
+}
+/* 导航框 */
+.navBox{
+  flex-wrap: wrap;
+  margin:6% 0;
+ background: #fff;
+}
+.navBox navigator{
+  width:25%;
+  justify-content: center;
   align-items: center;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
+.navBox navigator image{
+  width: 90rpx;
+	height: 90rpx;
+  margin-bottom:3%;
   border-radius: 50%;
+	background-color: #f7c7d3;
+}
+.navBox navigator text{
+	font-size: 24rpx;
+  color: #333333;
+}
+/* 橫向滾動 */
+.scrollBox .scroll_tp{
+ height: 100rpx;
+ width:100%;
+ margin:2% 0;
+}
+.weui-navbar__item{
+  padding:0;
+  width:25%;
+}
+.scrollBox .weui-navbar__title{
+  height: 100rpx;
+  justify-content: center;
+  align-items: center;
+}
+.scrollBox .weui-navbar__title view:nth-child(2){
+  color: #999999;
+}
+.weui-navbar__item.weui-bar__item_on view:nth-child(2){
+  color:#fff;
+}
+.scrollBox .scroll_bt{
+
+}
+.scrollBox .active_show_box{
+  background-color: #ffffff;
+	border-radius: 10rpx;
+  margin:1% 3%;
+  padding:3% 4%;
+}
+.scrollBox .active_show_box image{
+  width:100%;
+  height: 330rpx;
+  background-color: #ef7aaf;
+	border-radius: 10rpx;
+}
+.scrollBox .active_show_box >text{
+  width:100%;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  font-size: 28rpx;
+  color: #333333;
+  margin-bottom:1%;
+}
+.scrollBox button[size="mini"]{
+  font-size: 28rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
-}

@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/post/post"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",
@@ -17,8 +18,8 @@
         {
           "pagePath": "pages/index/index",
           "text": "首页",
-          "iconPath": "static/images/bottom_icon02.png",
-          "selectedIconPath": "static/images/bottom_icon02_lh.png"
+          "iconPath": "static/images/bottom_icon01.png",
+          "selectedIconPath": "static/images/bottom_icon01_lh.png"
         },
       {
         "pagePath": "pages/index/index",

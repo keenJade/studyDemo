@@ -1,0 +1,64 @@
+
+/* 通用样式表 */
+image{
+  display: block;
+}
+
+/* 字号 */
+.fs22{
+  font-size: 22rpx;
+}
+.fs24{
+  font-size: 24rpx;
+}
+.fs26{
+  font-size: 26rpx;
+}
+.fs28{
+  font-size: 28rpx;
+}
+.fs32{
+  font-size: 32rpx;
+}
+.fs36{
+  font-size: 36rpx;
+}
+.fs42{
+  font-size: 42rpx;
+}
+.fw_b{
+  font-size: 700;
+}
+/* 颜色 */
+.color_w{
+  color:#fff;
+}
+.color_9{
+  color:#999;
+}
+.color_e7{
+  color: #ef7aaf;
+}
+.bgc_e7{
+  background-color: #ef7aaf;
+}
+/* flex布局 */
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex_col{
+  display: flex;
+  flex-direction: column;
+}
+.flex_spa_ard{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex_spa_btw{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

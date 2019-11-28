@@ -1,5 +1,199 @@
 <!--index.wxml-->
-<view class="page">
-  <view class="page_hd"></view>
-  <view class="page_bd"></view>
+<!-- 引入模板 -->
+<import src="../post/template/template.wxml" />
+<view class="page ">
+  <view class="topBox">
+    <navigator url="" hover-class="no" class="search_btn flex">
+      <image src="../../static/images/search01.png"></image>
+      <text class="fs26 color_9">请输入您要搜索的内容</text>
+    </navigator>
+    <block>
+      <view class="page-section page-section-spacing swiper">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for="{{background}}" wx:key="*this">
+            <swiper-item>
+              <navigator url="">
+                <view class="swiper-item"> {{item}}</view>
+              </navigator>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </block>
+    <block>
+      <view class="navBox flex">
+        <navigator url="" class="flex_col">
+          <image src=""></image>
+          <text>1</text>
+        </navigator>
+        <navigator url="" class="flex_col">
+          <image src=""></image>
+          <text>2</text>
+        </navigator>
+        <navigator url="" class="flex_col">
+          <image src=""></image>
+          <text>3</text>
+        </navigator>
+        <navigator url="" class="flex_col">
+          <image src=""></image>
+          <text>4</text>
+        </navigator>
+      </view>
+    </block>
+  </view>
+  <block>
+    <view class="weui-tab scrollBox">
+      <view class="weui-navbar scroll_tp">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <scroll-view scroll-x="true" id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title flex_col fs24">
+              <view>{{item.time}}</view>
+              <view>{{item.text}}</view>
+            </view>
+          </scroll-view>
+        </block>
+      </view>
+      <view class="weui-tab__panel scroll_bt">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <block wx:for="{{quiteBuy}}" wx:key="quiteBuyId1">
+            <view class="active_show_box">
+              <image></image>
+              <text>连帽系腰带鹅绒羽绒服大毛领手</text>
+              <view class="flex_spa_btw">
+                <view class="left flex">
+                  <view class="fs24 color_e7">
+                    <text>团购价</text>
+                    <text>￥</text>
+                    <text class="fs42">299</text>
+                    <text>.00</text>
+                  </view>
+                  <view class="fs24">
+                    <text>| 原价</text>
+                    <text>￥</text>
+                    <text class="fs42">369</text>
+                    <text>.00</text>
+                  </view>
+                </view>
+                <view class="button-sp-area right">
+                  <button hidden="{{isHave}}" class="weui-btn color_w bgc_e7" size="mini">已抢光</button>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <block wx:for="{{quiteBuy}}" wx:key="quiteBuyId2">
+            <view class="active_show_box">
+              <image></image>
+              <text>连帽系腰带鹅绒羽绒服大毛领手</text>
+              <view class="flex_spa_btw">
+                <view class="left flex">
+                  <view class="fs24 color_e7">
+                    <text>团购价</text>
+                    <text>￥</text>
+                    <text class="fs42">299</text>
+                    <text>.00</text>
+                  </view>
+                  <view class="fs24">
+                    <text>| 原价</text>
+                    <text>￥</text>
+                    <text class="fs42">369</text>
+                    <text>.00</text>
+                  </view>
+                </view>
+                <view class="button-sp-area right">
+                  <button hidden="{{isHave}}" class="weui-btn color_w bgc_e7" size="mini">马上抢</button>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+          <block wx:for="{{quiteBuy}}" wx:key="quiteBuyId3">
+            <view class="active_show_box">
+              <image></image>
+              <text>连帽系腰带鹅绒羽绒服大毛领手</text>
+              <view class="flex_spa_btw">
+                <view class="left flex">
+                  <view class="fs24 color_e7">
+                    <text>团购价</text>
+                    <text>￥</text>
+                    <text class="fs42">299</text>
+                    <text>.00</text>
+                  </view>
+                  <view class="fs24">
+                    <text>| 原价</text>
+                    <text>￥</text>
+                    <text class="fs42">369</text>
+                    <text>.00</text>
+                  </view>
+                </view>
+                <view class="button-sp-area right">
+                  <button hidden="{{isHave}}" class="weui-btn color_w bgc_e7" size="mini">马上抢</button>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+          <block wx:for="{{quiteBuy}}" wx:key="quiteBuyId4">
+            <view class="active_show_box">
+              <image></image>
+              <text>连帽系腰带鹅绒羽绒服大毛领手</text>
+              <view class="flex_spa_btw">
+                <view class="left flex">
+                  <view class="fs24 color_e7">
+                    <text>团购价</text>
+                    <text>￥</text>
+                    <text class="fs42">299</text>
+                    <text>.00</text>
+                  </view>
+                  <view class="fs24">
+                    <text>| 原价</text>
+                    <text>￥</text>
+                    <text class="fs42">369</text>
+                    <text>.00</text>
+                  </view>
+                </view>
+                <view class="button-sp-area right">
+                  <button hidden="{{isHave}}" class="weui-btn color_w bgc_e7" size="mini">马上抢</button>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 4}}">
+          <block wx:for="{{quiteBuy}}" wx:key="quiteBuyId">
+            <view class="active_show_box">
+              <image></image>
+              <text>连帽系腰带鹅绒羽绒服大毛领手</text>
+              <view class="flex_spa_btw">
+                <view class="left flex">
+                  <view class="fs24 color_e7">
+                    <text>团购价</text>
+                    <text>￥</text>
+                    <text class="fs42">299</text>
+                    <text>.00</text>
+                  </view>
+                  <view class="fs24">
+                    <text>| 原价</text>
+                    <text>￥</text>
+                    <text class="fs42">369</text>
+                    <text>.00</text>
+                  </view>
+                </view>
+                <view class="button-sp-area right">
+                  <button hidden="{{isHave}}" class="weui-btn color_w bgc_e7" size="mini">马上抢</button>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block>
+  <view class="flex fs34 color_3 fw_b">好物推荐</view>
+    <template is="goodsListMobel" data="{{goodsInfo}}"></template>
+  </block>
 </view>

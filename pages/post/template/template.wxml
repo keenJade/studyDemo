@@ -1,0 +1,26 @@
+<!-- 商品列表模板 -->
+<template name="goodsListMobel">
+  <view class="goods_list_box">
+    <block wx:for="{{goodsInfo}}" wx:key="goodsInfo_id">
+      <view class="list_li">
+        <image class="li_pro_img" src=""></image>
+        <view class="list_li_info">
+          <text class="text">雪花顺行柔和洁面保湿泡沫洗面奶200ml</text>
+          <view class="flex_spa_btw">
+            <view class="flex one_price">
+              <view class="flex color_e7">
+                <text>￥</text>
+                <text>982</text>
+                <text>.00</text>
+              </view>
+              <view class="fs24 color_9">￥999.00</view>
+            </view>
+            <navigator>
+              <image></image>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>
