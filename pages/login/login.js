@@ -19,6 +19,10 @@ Page({
       inputValue: e.detail.value
     })
   },
+  // 点击确定登录
+  gotobtn:function(){
+    console.log(1)
+  },
   /**
    * 生命周期函数--监听页面加载
    */

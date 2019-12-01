@@ -16,7 +16,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.9.3",
 	"appid": "wx4dfb3bad19a64a9c",
-	"projectname": "weChatModel",
+	"projectname": "studyDemo",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
