@@ -3,7 +3,10 @@
     "pages/index/index",
     "pages/post/post",
     "pages/goodsList/goodsList",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/car/car",
+    "pages/message/message",
+    "pages/center/center"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",
@@ -30,18 +33,18 @@
           "selectedIconPath": "static/images/bottom_icon02_lh.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/message/message",
         "text": "消息",
           "iconPath": "static/images/bottom_icon03.png",
           "selectedIconPath": "static/images/bottom_icon03_lh.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/car/car",
         "text": "购物车",
           "iconPath": "static/images/bottom_icon04.png",
           "selectedIconPath": "static/images/bottom_icon04_lh.png"
       },{
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/center/center",
         "text": "我的",
           "iconPath": "static/images/bottom_icon05.png",
           "selectedIconPath": "static/images/bottom_icon05_lh.png"

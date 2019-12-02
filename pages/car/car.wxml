@@ -1,0 +1,8 @@
+<!--pages/car/car.wxml-->
+<view class="car_nodata flex_col">
+  <image src="../../static/images/icon-cart.png"></image>
+  <text class="fs28 color_9">购物车空空如也~~</text>
+   <view class="page__bd page__bd_spacing" bindtap="handleGoToLook">
+        <button class="weui-btn goToLook">去逛逛</button>
+    </view>
+</view>

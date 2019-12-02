@@ -1,0 +1,19 @@
+/* pages/car/car.wxss */
+.car_nodata{
+  width:100vw;
+  height: 100%;
+  margin-top:30%;
+  align-items: center;
+}
+.car_nodata image{
+  width:120rpx;
+  height:120rpx;
+}
+.car_nodata text{
+  display: block;
+  margin: 50rpx 0;
+}
+.car_nodata .goToLook{
+  color:#fff;
+  background: #ef7aaf;
+}
