@@ -13,3 +13,7 @@
 page{
   background: #f5f5f5;
 }
+.page{
+  width: 100vw;
+  height:100%;
+}

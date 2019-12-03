@@ -1,2 +1,113 @@
 <!--pages/center/center.wxml-->
-<text>pages/center/center.wxml</text>
+<view class="page">
+  <view class="my_info flex_spa_btw">
+    <navigator class="flex ">
+      <image class="my_photo" url=""></image>
+      <view class="color_w flex_col info_text">
+        <text class="fs32">坠落的烟火</text>
+        <text class="fs26">ID:962369</text>
+        <view class="fs22">白银</view>
+      </view>
+    </navigator>
+    <navigator>
+      <view class="fs26 color_41 money_box">钱包</view>
+    </navigator>
+  </view>
+  <view class="my_money flex_spa_ard">
+    <view class="flex_col">
+      <text class="fs40 color_41 fw_b">2059</text>
+      <text class="fs26 color_9">待结算</text>
+    </view>
+    <view class="flex_col">
+      <text class="fs40 color_41 fw_b">2059</text>
+      <text class="fs26 color_9">已结算</text>
+    </view>
+    <view class="flex_col">
+      <text class="fs40 color_41 fw_b">2059</text>
+      <text class="fs26 color_9">余额</text>
+    </view>
+  </view>
+  <view class="my_order">
+    <view class="weui-cells weui-cells_after-title ">
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd fs28 color_41 fw_b">我的订单</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access fs24 color_9">查看全部</view>
+      </navigator>
+      <view class="list_box flex bor_t">
+        <view class="weui-cell">
+          <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+            <image src="" />
+            <view class="weui-badge" style="position: absolute;top: -.5em;right: -.5em;">8</view>
+            <text class="fs26 color_9">待付款</text>
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+            <image src="" />
+            <view class="weui-badge" style="position: absolute;top: -.5em;right: -.5em;">28</view>
+            <text class="fs26 color_9">待收货</text>
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+            <image src="" />
+            <view class="weui-badge" style="position: absolute;top: -.5em;right: -.5em;">8</view>
+            <text class="fs26 color_9">待评价</text>
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+            <image src="" />
+            <view class="weui-badge" style="position: absolute;top: -.5em;right: -.5em;">8</view>
+            <text class="fs26 color_9">售后</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="my_service">
+    <view class="weui-cells weui-cells_after-title ">
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd fs28 color_41 fw_b">我的服务</view>
+      </navigator>
+      <view class="list_box flex bor_t">
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <image src="" />
+            <text class="fs26 color_9">优惠券</text>
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd" >
+            <image src="" />
+            <text class="fs26 color_9">积分</text>
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd" >
+            <image src="" />
+            <text class="fs26 color_9">足迹</text>
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd" >
+            <image src="" />
+            <text class="fs26 color_9">评价</text>
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd" >
+            <image src="" />
+            <text class="fs26 color_9">地址</text>
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <image src="" />
+            <text class="fs26 color_9">设置</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>

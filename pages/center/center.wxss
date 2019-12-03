@@ -1,1 +1,85 @@
 /* pages/center/center.wxss */
+
+.my_info{
+  background: #f87cb4;
+  padding:14% 3%;
+}
+.my_info .my_photo{
+  width: 120rpx;
+	height: 120rpx;
+  border-radius: 50%;
+  margin-right: 4%;
+	background-color: #ffffff;
+	border: solid 3rpx #ffffff;
+}
+.my_info .info_text{
+  width:200rpx;
+}
+.my_info .info_text view{
+  width: 90rpx;
+	height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+	border-radius: 18rpx;
+  margin-top:2%;
+	border: solid 2rpx #ffffff;
+}
+.my_info .money_box{
+  width: 138rpx;
+	height: 54rpx;
+  text-align: center;
+  line-height: 54rpx;
+	background-color: #ffeddc;
+	border-radius: 27rpx 0 27rpx 0;
+}
+.my_money,.my_money,.my_order,.my_service{
+ border-radius: 20rpx;
+}
+.my_money{
+  background-color: #ffffff;
+  margin: -8% 2% 0;
+  padding:3% 0;
+}
+.my_money >view{
+  justify-content: center;
+  align-items: center;
+}
+.my_order,.my_service{
+  margin:2% 2% 0;
+  overflow: hidden;
+}
+.list_box .weui-cell__hd{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ .list_box image{
+  width:70rpx;
+  height:70rpx;
+  background-color: #f87cb4;
+}
+
+.my_service .list_box{
+  flex-wrap: wrap;
+  justify-content: initial;
+
+}
+.my_service{
+  margin-bottom:2%;
+}
+.my_service .list_box >view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:4% 0 2%;
+  width:25%;
+}
+/* 更改原始样式 */
+.weui-cell:before {
+  display:none;
+}
+.weui-badge{
+  font-size: 22rpx;
+ background-color: #ef7aaf;
+}
