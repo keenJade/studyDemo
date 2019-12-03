@@ -1,0 +1,8 @@
+/* pages/set/set.wxss */
+.btns button{
+  width: 690rpx;
+  margin:10% auto;
+  font-size: 32rpx;
+  color: #ffffff;
+	background-color: #ef7aaf;
+}

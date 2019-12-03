@@ -1,0 +1,14 @@
+<!--pages/set/set.wxml-->
+<view class="weui-cells weui-cells_after-title">
+  <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd fs26">设置密码</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd fs26">关于我们</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
+<view class="btns">
+  <navigator url="/pages/login/login"> <button class="weui-btn" >退出登录</button></navigator>
+</view>

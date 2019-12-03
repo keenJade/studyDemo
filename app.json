@@ -6,7 +6,8 @@
     "pages/login/login",
     "pages/car/car",
     "pages/message/message",
-    "pages/center/center"
+    "pages/center/center",
+    "pages/set/set"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",
