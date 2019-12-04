@@ -50,53 +50,76 @@ Page({
     this.setData({
       disabled: true
     })
-    wx.request({
-      url: "",
-      data: {
-        telInput: "121",
-        pwdInput: "000000",
-      },
-      header: {
-        "content-type": "application/json"
-      },
-      success: function(res) {
-        console.log(res);
-        if (res.statusCode == 200) {
-          if (res.data.error == true) {
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'none',
-              duration: 2000
-            })
-          } else {
-            wx.setStorageSync('student', res.data.data);
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'success',
-              duration: 2000
-            })
-            setTimeout(function() {
-              wx.switchTab({
-                url: '../teacher/teacher',
-              })
-            }, 2000)
-          }
-        } else {
-          wx.showToast({
-            title: '服务器出现错误',
-            icon: 'none',
-            duration: 2000
-          })
-        }
-      }
-    })
+    // wx.request({
+    //   url: "",
+    //   data: {
+    //     telInput:res.tel,
+    //     pwdInput: res.pwd,
+    //   },
+    //   header: {
+    //     "content-type": "application/json"
+    //   },
+    //   success: function(res) {
+    //     console.log(res);
+    //     if (res.statusCode == 200) {
+    //       if (res.data.error == true) {
+    //         wx.showToast({
+    //           title: res.data.msg,
+    //           icon: 'none',
+    //           duration: 2000
+    //         })
+    //       } else {
+    //         wx.setStorageSync('student', res.data.data);
+    //         wx.showToast({
+    //           title: res.data.msg,
+    //           icon: 'success',
+    //           duration: 2000
+    //         })
+    //         setTimeout(function() {
+    //           wx.switchTab({
+    //             url: '../teacher/teacher',
+    //           })
+    //         }, 2000)
+    //       }
+    //     } else {
+    //       wx.showToast({
+    //         title: '服务器出现错误',
+    //         icon: 'none',
+    //         duration: 2000
+    //       })
+    //     }
+    //   }
+    // })
   },
 
   // 点击确定登录
-  gotobtn: function() {
-    wx.switchTab({
-      url: '/pages/index/index',
-    })
+  gotobtn: function(even) {
+    console.log(even)
+    let tel = this.data.telInput
+    let pwd = this.data.pwdInput
+    let userInfo = {
+      telInput: tel,
+      pwdInput: pwd
+    }
+    if (tel == "null") {
+      wx.showToast({
+        title: "请输入账号"
+      })
+      return
+    }
+    if (pwd == "null") {
+      wx.showToast({
+        title: '请输入密码',
+      })
+      return
+    }
+    if (userInfo) {
+      wx.switchTab({
+        url: '/pages/index/index',
+      })
+    }
+
+
     // wx.login({
     //   success(res){
     //     console.log(res)
