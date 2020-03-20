@@ -36,10 +36,26 @@
 .one_price{
   align-items: baseline;
 }
-.list_li_info navigator image{
+.list_li_info .add-card image{
   width: 36rpx;
 	height: 36rpx;
   border-radius: 50%;
 	background-color: #ef7aaf;
 	border: solid 3px #ef7aaf;
+}
+
+/* 按钮 */
+button:is([size='lang']) {
+   width:690rpx;
+}
+ .goToLook{
+  margin-top:20rpx;
+  color:#fff;
+  background-color: #ef7aaf;
+}
+.max-click-btn{
+   margin-top:20rpx;
+   margin-bottom:20rpx;
+   color:#fff;
+  background-color: #ef7aaf;
 }

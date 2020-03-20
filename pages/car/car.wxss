@@ -1,4 +1,5 @@
 /* pages/car/car.wxss */
+@import "../post/template/template.wxss";
 .car_nodata{
   width:100vw;
   height: 100%;
@@ -13,7 +14,33 @@
   display: block;
   margin: 50rpx 0;
 }
-.car_nodata .goToLook{
-  color:#fff;
-  background: #ef7aaf;
+
+.weui-cells:after, .weui-cells:before{
+  display:none;
+}
+.checkbox{
+  background-color: #fff;
+}
+.good-info .good-info__img{
+  width: 140rpx;
+	height: 140rpx;
+  margin-right: 3%;
+	background-color: #ef7aaf;
+}
+.good-info .good-info__txt >text:first-child{
+    display: block;
+    width:100%;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 28rpx;
+    color: #333333;
+    margin-bottom:1%;
+}
+.good-info .good-info__txt-price{
+
 }

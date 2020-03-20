@@ -5,8 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    noData:false,
+    allNum:2,  // 当前购物车共有商品
   },
+  // 多项选  
+  
 // 去逛逛
   handleGoToLook:function(){
     wx.switchTab({

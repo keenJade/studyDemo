@@ -15,12 +15,30 @@
               </view>
               <view class="fs24 color_9">￥999.00</view>
             </view>
-            <navigator>
+            <view class="add-card" bindtap="handleAddCard" >
               <image></image>
-            </navigator>
+            </view>
           </view>
         </view>
       </view>
     </block>
   </view>
+</template>
+
+<!-- 点击按钮 -->
+<template name="minClickBtns">
+     <view class="page__bd page__bd_spacing" bindtap="handleGoToLook">
+        <button class="weui-btn goToLook">去逛逛</button>
+    </view>
+</template>
+<template name="maxClickBtns">
+    <view class="page__bd page__bd_spacing">
+        <button class="weui-btn max-click-btn" size='lang' >{{btnText}}</button>
+    </view>
+</template>
+<template name="twoBtns">
+ <view class="button-sp-area">
+            <button class="weui-btn mini-btn" type="primary" size="mini">按钮</button>
+            <button class="weui-btn mini-btn" type="default" size="mini">按钮</button>
+        </view>
 </template>

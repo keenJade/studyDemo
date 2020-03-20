@@ -1,10 +1,11 @@
-// pages/post/post.js
+// pages/setInfo/setInfo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+
   },
 
   /**

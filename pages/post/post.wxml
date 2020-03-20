@@ -1,3 +1,5 @@
 <!-- 引入模板 -->
 <import src="template/template.wxml" />
 <template is="goodsListMobel" data="{{goodsInfo}}"></template>
+<template is="minClickBtns"></template>
+<template is="maxClickBtns" data="{{btnText}}"></template>

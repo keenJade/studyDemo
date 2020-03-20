@@ -1,7 +1,7 @@
 <!--pages/center/center.wxml-->
 <view class="page">
   <view class="my_info flex_spa_btw">
-    <navigator class="flex ">
+    <navigator url="/pages/setInfo/setInfo" class="flex ">
       <image class="my_photo" url=""></image>
       <view class="color_w flex_col info_text">
         <text class="fs32">坠落的烟火</text>

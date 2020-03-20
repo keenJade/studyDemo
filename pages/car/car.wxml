@@ -1,8 +1,53 @@
 <!--pages/car/car.wxml-->
-<view class="car_nodata flex_col">
+<import src="../post/template/template.wxml" />
+<!-- 没有数据的时候显示 -->
+<view wx:if="{{noData}}" class="car_nodata flex_col">
   <image src="../../static/images/icon-cart.png"></image>
   <text class="fs28 color_9">购物车空空如也~~</text>
-   <view class="page__bd page__bd_spacing" bindtap="handleGoToLook">
-        <button class="weui-btn goToLook">去逛逛</button>
+  <template is="minClickBtns"></template>
+</view>
+<!-- 有数据的时候显示 -->
+<view class="data-boxs">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_example ">
+      <view class="weui-cell__bd fs32">当前购物车共{{allNum}}件商品</view>
+      <view class="weui-cell__ft fs28 color_e7">编辑</view>
     </view>
+  </view>
+
+  <!-- <checkbox-group class="radio-group" bindchange="checkboxChange">
+
+    <view class="weui-cells good-info">
+      <view class="weui-cell weui-cell_swiped">
+        <view class="weui-cell__hd">
+          <label class="checkbox flex_spa_ard " wx:for="{{items}}"> </label>
+        </view>
+        <view class="weui-cell__bd" style="transform: translateX(0px)">
+          <view class="weui-cell goods-list">
+            <view class="weui-cell__hd">
+              <image class="good-info__img" url=""></image>
+            </view>
+            <view class="weui-cell__bd">
+              <view class="good-info__txt flex_col">
+                <text class="fs28">连帽系腰带鹅绒羽绒服大毛领手工刺连帽系腰带鹅绒羽绒服大毛领手工刺</text>
+                <text class="fs28 color_9">铁锈红-M码</text>
+                <view class="good-info__txt-price">
+                  <view class="fs24">
+                    <text>￥</text>
+                    <text class="fs36">982</text>
+                    <text>.00</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cell__ft">
+          <navigator class="weui-swiped-btn weui-swiped-btn_warn fs28" href="javascript:">删除</navigator>
+        </view>
+      </view>
+    </view>
+
+  </checkbox-group> -->
+
 </view>

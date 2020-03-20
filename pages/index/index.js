@@ -38,6 +38,13 @@ Page({
     var that = this;
    
   },
+  // 点击添加到购物车
+  handleAddCard:function(){
+    console.log(1)
+    wx.switchTab({
+      url: '../pages/card/card.html',
+    })
+  },
   // 點擊切換
   tabClick: function(e) {
     this.setData({
