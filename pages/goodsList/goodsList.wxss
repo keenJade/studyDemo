@@ -21,7 +21,7 @@
 .active {
   background-color: aquamarine;
   font-weight: 700;
-  color: #f00;
+  color: #ef7aaf;
 }
 .nav-right {
   position: absolute;

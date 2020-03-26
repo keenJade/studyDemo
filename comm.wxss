@@ -75,3 +75,8 @@ image{
   justify-content: space-between;
   align-items: center;
 }
+.flex_spa_bas{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}

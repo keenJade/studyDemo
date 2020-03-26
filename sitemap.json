@@ -1,8 +1,9 @@
 {
   "desc": "关于本文件的更多信息，请参考文档 https://developers.weixin.qq.com/miniprogram/dev/framework/sitemap.html",
-  // 索引规则列表
-  "rules": [{
-  "action": "allow", //页面是否能被索引
-  "page": "*" // 表示所有页面
-  }]
+  "rules": [
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
 }
