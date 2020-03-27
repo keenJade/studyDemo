@@ -4,8 +4,13 @@
 <view wx:if="{{!noData}}" class="data-boxs">
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_example ">
-      <view class="weui-cell__bd fs32">当前购物车共{{allNum}}件商品</view>
-      <view class="weui-cell__ft fs28 color_e7">编辑</view>
+      <view class="weui-cell__bd fs32">当前购物车共{{carLists.length}}件商品</view>
+      <block wx:if="{{isEdit}}">
+        <view class="weui-cell__ft fs28 color_e7">编辑</view>
+      </block>
+      <block wx:else>
+        <view class="weui-cell__ft fs28 color_e7">完成</view>
+      </block>
     </view>
   </view>
   <block wx:for="{{carLists}}" wx:key=''>
@@ -22,13 +27,16 @@
             <view class="carts-subtitle">
               <text class="carts-price ">￥{{item.price}}</text>
               <view class="carts-num flex">
-                <text class="decrease" bindtap="handleDecrease" data-index="{{index}}">-</text>
-                <input type="number " data-index="{{index}}" value="{{item.inputValue}}" />
-                <text class="increase" data-index="{{index}}" bindtap="handleIncrease">+</text>
+                <view class="decrease {{item.inputValue ==1? 'disabled':''}}" bindtap="handleDecrease" data-index="{{index}}"> -</view>
+                <input type="number " data-index="{{index}}" disabled value="{{item.inputValue}}" />
+                <view class="increase" data-index="{{index}}" bindtap="handleIncrease">+</view>
               </view>
             </view>
           </view>
         </view>
+          <view class="delete-btn" data-index="{{index}}" catchtap="delBtn">
+                  删除
+                </view>
       </view>
     </view>
   </block>
@@ -41,8 +49,10 @@
           合计：￥
           <em>{{totalMoney}}</em>
         </view>
-        <view wx:if="{{totalCount !=0}}" class="btn-pay" bindtap="handleAccount">去结算{{totalCount}}</view>
-        <view wx:else class="btn-pay disabled">去结算{{totalCount}}</view>
+          <view wx:if="{{totalCount !=0}}" class="btn-pay" bindtap="handleAccount">
+            去结算({{totalCount}})
+          </view>
+          <view wx:else class="btn-pay disabled">去结算({{totalCount}})</view>
       </view>
     </view>
   </view>

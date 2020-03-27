@@ -7,13 +7,13 @@ Page({
     carLists: [
       {
         car_id: 1,
-        isSelected: true,
-        name: "这是一个美丽的衣服需要你来用",
+        isSelected: false,
+        name: "无用的一件",
         image:
           "https://img.alicdn.com/imgextra/i1/121515222/O1CN014aQtAS1oRiqTCPads_!!0-saturn_solar.jpg_220x220.jpg_.webp",
         price: 45.0,
         describe: "的角度看是开发就是点击框架都是疯狂加卡死了就",
-        inputValue: 2
+        inputValue: 1
       },
       {
         car_id: 2,
@@ -27,26 +27,28 @@ Page({
       },
       {
         car_id: 3,
-        isSelected: true,
-        name: "这是一个美丽的衣服需要你来用",
+        isSelected: false,
+        name: "最后的一件",
         image:
           "https://img.alicdn.com/imgextra/i1/121515222/O1CN014aQtAS1oRiqTCPads_!!0-saturn_solar.jpg_220x220.jpg_.webp",
         price: 45.0,
         describe: "的角度看是开发就是点击框架都是疯狂加卡死了就",
-        inputValue: 12
+        inputValue: 1
       }
     ],
+    isEdit:true, // 编辑完成
     noData: false, // 购物车有没有数据
     totalMoney: 0, //总金额
     selectAllStatus: false, // 是否全选
     uid: 0, // 用户id
-    totalCount: 1, // 总的数量
+    totalCount: 0, // 总的数量
     allNum: 0 // 当前购物车共有商品
   },
+  
   // 结算
   handleAccount() {
-    const _this = this;
-    let carLists = _this.data.carLists,
+  
+    let carLists = this.data.carLists,
       total = 0,
       num = 0;
     for (let i = 0; i < carLists.length; i++) {
@@ -57,7 +59,7 @@ Page({
         console.log(num, total);
       }
     }
-    _this.setData({
+    this.setData({
       carLists: carLists,
       totalCount: num,
       totalMoney: total.toFixed(2)
@@ -65,55 +67,68 @@ Page({
   },
   // 减少数量
   handleDecrease(e) {
-    const _this = this;
     const tarIndex = e.target.dataset.index;
-    let carLists = _this.data.carLists;
+    let carLists = this.data.carLists;
     let inputValue = carLists[tarIndex].inputValue;
-    if (inputValue < 1) return false;
-    inputValue -= 1;
+    if (inputValue > 1) {
+      inputValue --
+    }
+   
     carLists[tarIndex].inputValue = inputValue;
-    _this.setData({
+    this.setData({
       carLists: carLists
     });
+    this.handleAccount()
   },
   // 增加数量
   handleIncrease(e) {
-    const _this = this;
+  
     const tarIndex = e.target.dataset.index;
-    let carLists = _this.data.carLists;
+    let carLists = this.data.carLists;
     let inputValue = carLists[tarIndex].inputValue;
-    inputValue += 1;
+    inputValue++
     carLists[tarIndex].inputValue = inputValue;
-    _this.setData({
+    this.setData({
       carLists: carLists
     });
+    this.handleAccount()
   },
   // 全选
   handleAllSelected(e) {
-    const _this = this;
-    let selectAllStatus = _this.data.selectAllStatus;
-    let carLists = _this.data.carLists;
+  
+    let selectAllStatus = this.data.selectAllStatus;
+    let carLists = this.data.carLists;
     selectAllStatus = !selectAllStatus;
     for (let i = 0; i < carLists.length; i++) {
       carLists[i].isSelected = selectAllStatus;
     }
-    _this.setData({
+    this.setData({
       carLists: carLists,
       selectAllStatus: selectAllStatus
     });
+    this.handleAccount()
   },
   // 是否选择
   handleClickBtn: function(e) {
-    const _this = this;
     const tarIndex = e.target.dataset.index;
-    let carLists = _this.data.carLists;
-    const isSelected = carLists[tarIndex].isSelected;
+    let carLists = this.data.carLists,
+     isSelected = carLists[tarIndex].isSelected;
     carLists[tarIndex].isSelected = !isSelected;
-
-    _this.setData({
+ 
+    this.setData({
       carLists: carLists,
       selectAllStatus: false
     });
+    this.handleAccount()
+  },
+  // 删除
+  delBtn(e){
+    const  domIndex = e.target.dataset.index
+    let carLists = this.data.carLists
+    carLists.splice(domIndex,1)
+    this.setData({
+      carLists:carLists
+    })
   },
 
   // 去逛逛
