@@ -14,8 +14,10 @@
     </view>
   </view>
   <block wx:for="{{carLists}}" wx:key=''>
-    <view class="carts-list">
-      <view class="carts-item flex_spa_btw">
+    <view class="carts-list cart_swiped" data-index="{{index}}" 
+    
+    bindtouchstart ="touchS" bindtouchmove="touchM" bindtouchend="touchE" bindtouchcancel="touchE">
+      <view class="carts-item flex_spa_btw" style="left: -{{offsetRecord.index == index?offsetRecord.offset:0}} rpx;">
         <view class="carts-radio">
           <image class="carts-select" bindtap='handleClickBtn' data-index="{{index}}" src="{{item.isSelected? '../../static/images/select-on.png':'../../static/images/select-out.png'}}"></image>
         </view>

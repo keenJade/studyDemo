@@ -36,6 +36,14 @@ Page({
         inputValue: 1
       }
     ],
+    offsetRecord:{
+      'index': -1,
+      'startX':0,
+      'offset':0,
+      'direction':null
+    },
+    pixelScale: 1,
+    deleteButtonWidth:120, // 删除按钮的宽度
     isEdit:true, // 编辑完成
     noData: false, // 购物车有没有数据
     totalMoney: 0, //总金额
@@ -44,6 +52,7 @@ Page({
     totalCount: 0, // 总的数量
     allNum: 0 // 当前购物车共有商品
   },
+  
   
   // 结算
   handleAccount() {
@@ -136,6 +145,81 @@ Page({
     wx.switchTab({
       url: "/pages/index/index"
     });
+  },
+  // 触摸开始
+  touchS(event){
+    // console.log(event)
+    let index =event.currentTarget.dataset.index,
+        x=event.changedTouches[0].clientX,
+        offset =0;
+    if(event.changedTouches.length !=1) return;
+    if(this.data.offsetRecord != null && this.data.offsetRecord.index == index){
+      offset =this.data.offsetRecord.offset;
+    }
+    this.setData({
+      offsetRecord:{
+        'index':index,
+        'startX':x,
+        'offset':offset,
+        'direction':null
+      }
+    })
+  },
+  // 触摸移动
+  touchM(event){
+    let index = event.currentTarget.dataset.index,
+    clientX = event.changedTouches[0].clientX,
+    record =this.data.offsetRecord,
+    offsetRecord=this.data.offsetRecord,
+    startX =Reflect.get(record,'startX');
+    // console.log(record)
+    if(event.changedTouches.length !=1) return;
+    // Reflect.get() 从目标对象中获取属性,作为一个函数执行
+    if(record == null || index !=Reflect.get(record,'index')) return;
+    if(Reflect.get(record,'direction') == undefined){
+      // 记录手势左滑还是右滑
+      let direction = startX >= clientX?'left':'right';
+      Reflect.set(record,'direction',direction)
+    }
+    // 左滑
+    if(Reflect.get(record,'direction') == 'left'){
+      record.offset =Math.min(startX- clientX)*this.data.pixelScale,this.data.deleteButtonWidth
+      console.log("lt："+record.offset)
+    }else{
+      // 右滑
+     
+      if(record.offset>0){
+         // Math.abs()返回值的绝对值
+         console.log(this.data.deleteButtonWidth)
+         console.log( Math.abs(clientX-startX))
+         console.log(this.data.pixelScale)
+        record.offset=Math.max(this.data.deleteButtonWidth - Math.abs(clientX-startX)*this.data.pixelScale,0)
+        console.log("rt："+record.offset)
+      }else {
+        record =null;
+      }
+    }
+    this.setData({
+      offsetRecord:record
+    })
+  },
+  // 触摸结束事件
+  touchE(event){
+    let index = event.currentTarget.dataset.index,
+       record =this.data.offsetRecord;
+      if(event.changedTouches.lenth !=1) return;
+      if(record !=null && index == Reflect.get(record,'index')){
+        let offset =Reflect.get(record,'offset');
+        if(offset >= this.data.deleteButtonWidth /2){
+          console.log(offset)
+          Reflect.set(record,'offset',this.data.deleteButtonWidth);
+        }else{
+          record =null;
+        }
+        this.setData({
+          offsetRecord:record
+        })
+      }
   },
   /**
    * 生命周期函数--监听页面加载

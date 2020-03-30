@@ -139,12 +139,17 @@
   background: #ccc;
 }
 .delete-btn{
+  position: absolute;
+  left: 110%;
   width: 120rpx;
   line-height: 220rpx;
   text-align: center;
   background:#ef7aaf;
   font-size: 24rpx;
   color: #fff;
+}
+.cart_swiped {
+  position: relative;
 }
 
 
