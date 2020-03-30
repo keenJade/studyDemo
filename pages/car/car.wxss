@@ -107,7 +107,9 @@
   height: 50px;
   background: #ffff;
 }
-
+.inner{
+  width: 100%;
+}
 .bottomfixed .inner .check-all {
   font-size: 28rpx;
   margin-right: 40rpx;
@@ -152,6 +154,11 @@
   position: relative;
 }
 
+.btnBox{
+  flex:1;
+  text-align: right;
+  color:#ef7aaf;
+}
 
 
 

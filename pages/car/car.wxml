@@ -5,18 +5,16 @@
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_example ">
       <view class="weui-cell__bd fs32">当前购物车共{{carLists.length}}件商品</view>
-      <block wx:if="{{isEdit}}">
-        <view class="weui-cell__ft fs28 color_e7">编辑</view>
+      <block wx:if="{{isEdit == 1}}">
+        <view class="weui-cell__ft fs28 color_e7" bindtap="handleEdit" data-index="2">编辑</view>
       </block>
       <block wx:else>
-        <view class="weui-cell__ft fs28 color_e7">完成</view>
+        <view class="weui-cell__ft fs28 color_e7" bindtap="handleEdit" data-index="1">完成</view>
       </block>
     </view>
   </view>
   <block wx:for="{{carLists}}" wx:key=''>
-    <view class="carts-list cart_swiped" data-index="{{index}}" 
-    
-    bindtouchstart ="touchS" bindtouchmove="touchM" bindtouchend="touchE" bindtouchcancel="touchE">
+    <view class="carts-list cart_swiped" data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" bindtouchcancel="touchE">
       <view class="carts-item flex_spa_btw" style="left: -{{offsetRecord.index == index?offsetRecord.offset:0}} rpx;">
         <view class="carts-radio">
           <image class="carts-select" bindtap='handleClickBtn' data-index="{{index}}" src="{{item.isSelected? '../../static/images/select-on.png':'../../static/images/select-out.png'}}"></image>
@@ -29,16 +27,16 @@
             <view class="carts-subtitle">
               <text class="carts-price ">￥{{item.price}}</text>
               <view class="carts-num flex">
-                <view class="decrease {{item.inputValue ==1? 'disabled':''}}" bindtap="handleDecrease" data-index="{{index}}"> -</view>
+                <view class="decrease {{item.inputValue ==1? 'disabled':''}}" bindtap="handleDecrease" data-index="{{index}}">
+                  -
+                </view>
                 <input type="number " data-index="{{index}}" disabled value="{{item.inputValue}}" />
                 <view class="increase" data-index="{{index}}" bindtap="handleIncrease">+</view>
               </view>
             </view>
           </view>
         </view>
-          <view class="delete-btn" data-index="{{index}}" catchtap="delBtn">
-                  删除
-                </view>
+        <view class="delete-btn" data-index="{{index}}" catchtap="delBtn">删除</view>
       </view>
     </view>
   </block>
@@ -47,18 +45,23 @@
       <view class="check-all">
         <image class="all-select" bindtap="handleAllSelected" src="{{selectAllStatus?'../../static/images/select-on.png':'../../static/images/select-out.png'}}"></image>
         <text>全选</text>
-        <view class="total">
-          合计：￥
-          <em>{{totalMoney}}</em>
-        </view>
+        <view style="display:flex" wx:if="{{isEdit == 1}}">
+          <view class="total">
+            合计：￥
+            <em>{{totalMoney}}</em>
+          </view>
           <view wx:if="{{totalCount !=0}}" class="btn-pay" bindtap="handleAccount">
             去结算({{totalCount}})
           </view>
           <view wx:else class="btn-pay disabled">去结算({{totalCount}})</view>
+        </view>
+        <view wx:if='{{isEdit == 2}}' class='btnBox'>
+          <view class="btn fs28 del" >删除</view>
+        </view>
       </view>
     </view>
   </view>
-</view>
+</!-->
 <!-- 没有数据的时候显示 -->
 <view wx:else class="car_nodata flex_col">
   <image src="../../static/images/icon-cart.png"></image>

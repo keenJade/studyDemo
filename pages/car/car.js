@@ -44,13 +44,13 @@ Page({
     },
     pixelScale: 1,
     deleteButtonWidth:120, // 删除按钮的宽度
-    isEdit:true, // 编辑完成
+    isEdit:1, // 编辑完成
     noData: false, // 购物车有没有数据
     totalMoney: 0, //总金额
     selectAllStatus: false, // 是否全选
     uid: 0, // 用户id
     totalCount: 0, // 总的数量
-    allNum: 0 // 当前购物车共有商品
+    allNum: 0 ,// 当前购物车共有商品
   },
   
   
@@ -139,7 +139,12 @@ Page({
       carLists:carLists
     })
   },
-
+// 编辑完成
+handleEdit(e){
+  this.setData({
+    isEdit: e.target.dataset.index
+  })
+},
   // 去逛逛
   handleGoToLook: function() {
     wx.switchTab({
